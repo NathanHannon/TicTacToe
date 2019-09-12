@@ -17,17 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#2196F3"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
-
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/ToolbarTitle"
-                android:textColor="@android:color/white"
-                />
-        </androidx.appcompat.widget.Toolbar>
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
