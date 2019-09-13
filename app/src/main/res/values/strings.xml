@@ -2,4 +2,8 @@
     <string name="app_name">TicTacToe</string>
     <string name="action_settings">Settings</string>
     <string name="ToolbarTitle">Tic Tac Toe</string>
+
+    <string name="btnX">X</string>
+    <string name="btnO">O</string>
+    <string name="btnBlank"> </string>
 </resources>
