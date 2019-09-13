@@ -9,7 +9,84 @@
     tools:showIn="@layout/activity_main" >
 
     <Button
-        android:id="@+id/btnTopMiddle2"
+        android:id="@+id/btnBottomMiddle"
+        android:layout_width="83dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="41dp"
+        android:text="@string/btnBlank"
+        app:layout_constraintEnd_toStartOf="@+id/btnMidRight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnMidLeft"
+        app:layout_constraintTop_toBottomOf="@+id/btnMiddle" />
+
+    <Button
+        android:id="@+id/btnBottomLeft"
+        android:layout_width="83dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="34dp"
+        android:text="@string/btnBlank"
+        app:layout_constraintEnd_toStartOf="@+id/btnTopMiddle"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMidLeft" />
+
+    <Button
+        android:id="@+id/btnBottomRight"
+        android:layout_width="83dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/btnBlank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toEndOf="@+id/btnTopMiddle"
+        app:layout_constraintTop_toBottomOf="@+id/btnMidRight" />
+
+    <Button
+        android:id="@+id/btnMiddle"
+        android:layout_width="83dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="41dp"
+        android:text="@string/btnBlank"
+        app:layout_constraintEnd_toStartOf="@+id/btnMidRight"
+        app:layout_constraintStart_toEndOf="@+id/btnMidLeft"
+        app:layout_constraintTop_toBottomOf="@+id/btnTopMiddle" />
+
+    <Button
+        android:id="@+id/btnMidLeft"
+        android:layout_width="83dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="34dp"
+        android:text="@string/btnBlank"
+        app:layout_constraintEnd_toStartOf="@+id/btnTopMiddle"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTopLeft" />
+
+    <Button
+        android:id="@+id/btnMidRight"
+        android:layout_width="83dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/btnBlank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toEndOf="@+id/btnTopMiddle"
+        app:layout_constraintTop_toBottomOf="@+id/btnTopRight" />
+
+    <Button
+        android:id="@+id/btnTopLeft"
         android:layout_width="83dp"
         android:layout_height="73dp"
         android:layout_marginStart="32dp"
@@ -24,7 +101,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btnTopMiddle3"
+        android:id="@+id/btnTopRight"
         android:layout_width="83dp"
         android:layout_height="73dp"
         android:layout_marginStart="32dp"
@@ -51,5 +128,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnNewGame"
+        android:layout_width="324dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="148dp"
+        android:text="@string/new_game"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBottomMiddle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
