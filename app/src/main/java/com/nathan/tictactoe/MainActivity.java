@@ -86,10 +86,10 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
-    public void ResetBoard(){
+
+    public void ResetBoard() {
         //Top Row
         btnTopLeft.setText(R.string.btnBlank);
         btnTopMiddle.setText(R.string.btnBlank);
@@ -102,5 +102,7 @@ public class MainActivity extends AppCompatActivity {
         btnBottomLeft.setText(R.string.btnBlank);
         btnBottomMiddle.setText(R.string.btnBlank);
         btnBottomRight.setText(R.string.btnBlank);
+
     }
 }
+
