@@ -19,8 +19,10 @@ import android.widget.Button;
 import static com.nathan.tictactoe.R.id.btnMidRight;
 import static com.nathan.tictactoe.R.id.btnNewGame;
 import static com.nathan.tictactoe.R.id.content;
+import static com.nathan.tictactoe.R.string.O;
+import static com.nathan.tictactoe.R.string.X;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private View screen;
     private boolean isX = true;
@@ -34,19 +36,6 @@ public class MainActivity extends AppCompatActivity {
     private Button btnBottomLeft;
     private Button btnBottomMiddle;
     private Button btnBottomRight;
-
-    private View.OnClickListener resetListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View screen) {
-            ResetBoard();
-        }
-    };
-    private View.OnClickListener boardListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View screen) {
-            SetButtonText();
-        }
-    };
 
 
     @Override
@@ -64,28 +53,28 @@ public class MainActivity extends AppCompatActivity {
         //screen.setOnClickListener(boardListener);
         //Top Row
         btnTopLeft = findViewById(R.id.btnTopLeft);
-        btnTopLeft.setOnClickListener(boardListener);
+        btnTopLeft.setOnClickListener(this);
         btnTopMiddle = findViewById(R.id.btnTopMiddle);
-        btnTopMiddle.setOnClickListener(boardListener);
+        btnTopMiddle.setOnClickListener(this);
         btnTopRight = findViewById(R.id.btnTopRight);
-        btnTopRight.setOnClickListener(boardListener);
+        btnTopRight.setOnClickListener(this);
         //Middle Row
         btnMidLeft = findViewById(R.id.btnMidLeft);
-        btnMidLeft.setOnClickListener(boardListener);
+        btnMidLeft.setOnClickListener(this);
         btnMiddle = findViewById(R.id.btnMiddle);
-        btnMiddle.setOnClickListener(boardListener);
+        btnMiddle.setOnClickListener(this);
         btnMidRight = findViewById(R.id.btnMidRight);
-        btnMidRight.setOnClickListener(boardListener);
+        btnMidRight.setOnClickListener(this);
         //Bottom Row
         btnBottomLeft = findViewById(R.id.btnBottomLeft);
-        btnBottomLeft.setOnClickListener(boardListener);
+        btnBottomLeft.setOnClickListener(this);
         btnBottomMiddle = findViewById(R.id.btnBottomMiddle);
-        btnBottomMiddle.setOnClickListener(boardListener);
+        btnBottomMiddle.setOnClickListener(this);
         btnBottomRight = findViewById(R.id.btnBottomRight);
-        btnBottomRight.setOnClickListener(boardListener);
+        btnBottomRight.setOnClickListener(this);
         //New Game
         Button btnNewGame = findViewById(R.id.btnNewGame);
-        btnNewGame.setOnClickListener(resetListener);
+        btnNewGame.setOnClickListener(this);
     }
 
     @Override
@@ -108,7 +97,126 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+    @Override
+    public void onClick(View v)
+    {
+        //Switch Statement for determining which button was clicked.
+        switch (v.getId())
+        {
+            case R.id.btnTopLeft:
+                if (isX)
+                {
+                    btnTopLeft.setText(X);
+                    isX=false;
+                }
+                else
+                {
+                    btnTopLeft.setText(O);
+                    isX=true;
+                }
+                break;
+            case R.id.btnTopMiddle:
+                if (isX)
+                {
+                    btnTopMiddle.setText(X);
+                    isX=false;
+                }
+                else
+                {
+                    btnTopMiddle.setText(X);
+                    isX=true;
+                }
+                break;
+            case R.id.btnTopRight:
+                if (isX)
+                {
+                    btnTopRight.setText(X);
+                    isX=false;
+                }
+                else
+                {
+                    btnTopRight.setText(O);
+                    isX=true;
+                }
+                break;
+            case R.id.btnMidLeft:
+                if (isX)
+                {
+                    btnMidLeft.setText(X);
+                    isX=false;
+                }
+                else
+                {
+                    btnMidLeft.setText(O);
+                    isX=true;
+                }
+                break;
+            case R.id.btnMiddle:
+                if (isX)
+                {
+                    btnMiddle.setText(X);
+                    isX=false;
+                }
+                else
+                {
+                    btnMiddle.setText(O);
+                    isX=true;
+                }
+                break;
+            case R.id.btnMidRight:
+                if (isX)
+                {
+                    btnMidRight.setText(X);
+                    isX=false;
+                }
+                else
+                {
+                    btnMidRight.setText(O);
+                    isX=true;
+                }
+                break;
+            case R.id.btnBottomLeft:
+                if (isX)
+                {
+                    btnBottomLeft.setText(X);
+                    isX=false;
+                }
+                else
+                {
+                    btnBottomLeft.setText(O);
+                    isX = true;
+                }
+                break;
+            case R.id.btnBottomMiddle:
+                if (isX)
+                {
+                    btnBottomMiddle.setText(X);
+                    isX=false;
+                }
+                else
+                {
+                    btnBottomMiddle.setText(O);
+                    isX = true;
+                }
+                break;
+            case R.id.btnBottomRight:
+                if (isX)
+                {
+                    btnBottomRight.setText(X);
+                    isX=false;
+                }
+                else
+                {
+                    btnBottomRight.setText(O);
+                    isX = true;
+                }
+                break;
+            case R.id.btnNewGame:
+            {
+                ResetBoard();
+            }
+        }
+    }
     public void ResetBoard() {
         //Top Row
         btnTopLeft.setText(R.string.btnBlank);
@@ -123,19 +231,6 @@ public class MainActivity extends AppCompatActivity {
         btnBottomMiddle.setText(R.string.btnBlank);
         btnBottomRight.setText(R.string.btnBlank);
 
-    }
-    public void SetButtonText()
-    {
-        if(isX)
-        {
-            //btnBottomRight.setText(R.string.btnX);
-            isX = false;
-        }
-        else
-        {
-            //btnBottomRight.setText(R.string.btnO);
-            isX = true;
-        }
     }
 }
 
