@@ -6,7 +6,5 @@
     <string name="btnX">X</string>
     <string name="btnO">O</string>
     <string name="btnBlank"> </string>
-    <string name="currentButton"> </string>
     <string name="new_game">New Game</string>
-    <string name="winner"> Wins</string>
 </resources>

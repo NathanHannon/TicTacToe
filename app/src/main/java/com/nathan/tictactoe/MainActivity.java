@@ -23,6 +23,7 @@ import static com.nathan.tictactoe.R.id.content;
 public class MainActivity extends AppCompatActivity {
 
     private View screen;
+    private boolean isX = true;
     //buttons
     private Button btnTopLeft;
     private Button btnTopMiddle;
@@ -34,7 +35,27 @@ public class MainActivity extends AppCompatActivity {
     private Button btnBottomMiddle;
     private Button btnBottomRight;
 
-    private Button btnNewGame;
+    private View.OnClickListener resetListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View screen) {
+            ResetBoard();
+        }
+    };
+    private View.OnClickListener boardListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View screen) {
+            if(isX)
+            {
+                //btnBottomRight.setText(R.string.btnX);
+                isX = false;
+            }
+            else
+            {
+                //btnBottomRight.setText(R.string.btnO);
+                isX = true;
+            }
+        }
+    };
 
 
     @Override
@@ -48,24 +69,32 @@ public class MainActivity extends AppCompatActivity {
         //TODO: Implement Board Reset Function
 
         //Screen
-        screen = findViewById(content);
-        //screen.setOnClickListener(this);
+        //screen = findViewById(content);
+        //screen.setOnClickListener(boardListener);
         //Top Row
         btnTopLeft = findViewById(R.id.btnTopLeft);
+        btnTopLeft.setOnClickListener(boardListener);
         btnTopMiddle = findViewById(R.id.btnTopMiddle);
+        btnTopMiddle.setOnClickListener(boardListener);
         btnTopRight = findViewById(R.id.btnTopRight);
+        btnTopRight.setOnClickListener(boardListener);
         //Middle Row
         btnMidLeft = findViewById(R.id.btnMidLeft);
+        btnMidLeft.setOnClickListener(boardListener);
         btnMiddle = findViewById(R.id.btnMiddle);
+        btnMiddle.setOnClickListener(boardListener);
         btnMidRight = findViewById(R.id.btnMidRight);
+        btnMidRight.setOnClickListener(boardListener);
         //Bottom Row
         btnBottomLeft = findViewById(R.id.btnBottomLeft);
+        btnBottomLeft.setOnClickListener(boardListener);
         btnBottomMiddle = findViewById(R.id.btnBottomMiddle);
+        btnBottomMiddle.setOnClickListener(boardListener);
         btnBottomRight = findViewById(R.id.btnBottomRight);
+        btnBottomRight.setOnClickListener(boardListener);
         //New Game
-        btnNewGame = findViewById(R.id.btnNewGame);
-        //btnNewGame.setOnClickListener(this);
-        ResetBoard();
+        Button btnNewGame = findViewById(R.id.btnNewGame);
+        btnNewGame.setOnClickListener(resetListener);
     }
 
     @Override
