@@ -44,16 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener boardListener = new View.OnClickListener() {
         @Override
         public void onClick(View screen) {
-            if(isX)
-            {
-                //btnBottomRight.setText(R.string.btnX);
-                isX = false;
-            }
-            else
-            {
-                //btnBottomRight.setText(R.string.btnO);
-                isX = true;
-            }
+            SetButtonText();
         }
     };
 
@@ -132,6 +123,19 @@ public class MainActivity extends AppCompatActivity {
         btnBottomMiddle.setText(R.string.btnBlank);
         btnBottomRight.setText(R.string.btnBlank);
 
+    }
+    public void SetButtonText()
+    {
+        if(isX)
+        {
+            //btnBottomRight.setText(R.string.btnX);
+            isX = false;
+        }
+        else
+        {
+            //btnBottomRight.setText(R.string.btnO);
+            isX = true;
+        }
     }
 }
 
