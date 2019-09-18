@@ -45,12 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //TODO: Link CLick Events to Buttons
-        //TODO: Implement Board Reset Function
-
-        //Screen
-        //screen = findViewById(content);
-        //screen.setOnClickListener(boardListener);
         //Top Row
         btnTopLeft = findViewById(R.id.btnTopLeft);
         btnTopLeft.setOnClickListener(this);
