@@ -1,30 +1,21 @@
 package com.nathan.tictactoe;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.os.strictmode.WebViewMethodCalledOnWrongThreadViolation;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Button;
-
-import static com.nathan.tictactoe.R.id.btnMidRight;
-import static com.nathan.tictactoe.R.id.btnNewGame;
-import static com.nathan.tictactoe.R.id.content;
+import static com.nathan.tictactoe.R.string.Blank;
 import static com.nathan.tictactoe.R.string.O;
 import static com.nathan.tictactoe.R.string.X;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private View screen;
     private boolean isX = true;
     //buttons
     private Button btnTopLeft;
@@ -36,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnBottomLeft;
     private Button btnBottomMiddle;
     private Button btnBottomRight;
-
+    private TextView msgGameStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //New Game
         Button btnNewGame = findViewById(R.id.btnNewGame);
         btnNewGame.setOnClickListener(this);
+        //Message Box
+        msgGameStatus = findViewById(R.id.msgGameStatus);
     }
 
     @Override
@@ -102,11 +95,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     btnTopLeft.setText(X);
                     isX=false;
+                    btnTopLeft.setEnabled(false);
                 }
                 else
                 {
                     btnTopLeft.setText(O);
                     isX=true;
+                    btnTopLeft.setEnabled(false);
                 }
                 break;
             case R.id.btnTopMiddle:
@@ -114,11 +109,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     btnTopMiddle.setText(X);
                     isX=false;
+                    btnTopMiddle.setEnabled(false);
                 }
                 else
                 {
-                    btnTopMiddle.setText(X);
+                    btnTopMiddle.setText(O);
                     isX=true;
+                    btnTopMiddle.setEnabled(false);
                 }
                 break;
             case R.id.btnTopRight:
@@ -126,11 +123,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     btnTopRight.setText(X);
                     isX=false;
+                    btnTopRight.setEnabled(false);
                 }
                 else
                 {
                     btnTopRight.setText(O);
                     isX=true;
+                    btnTopRight.setEnabled(false);
                 }
                 break;
             case R.id.btnMidLeft:
@@ -138,11 +137,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     btnMidLeft.setText(X);
                     isX=false;
+                    btnMidLeft.setEnabled(false);
                 }
                 else
                 {
                     btnMidLeft.setText(O);
                     isX=true;
+                    btnMidLeft.setEnabled(false);
                 }
                 break;
             case R.id.btnMiddle:
@@ -150,11 +151,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     btnMiddle.setText(X);
                     isX=false;
+                    btnMiddle.setEnabled(false);
                 }
                 else
                 {
                     btnMiddle.setText(O);
                     isX=true;
+                    btnMiddle.setEnabled(false);
                 }
                 break;
             case R.id.btnMidRight:
@@ -162,11 +165,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     btnMidRight.setText(X);
                     isX=false;
+                    btnMidRight.setEnabled(false);
                 }
                 else
                 {
                     btnMidRight.setText(O);
                     isX=true;
+                    btnMidRight.setEnabled(false);
                 }
                 break;
             case R.id.btnBottomLeft:
@@ -174,11 +179,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     btnBottomLeft.setText(X);
                     isX=false;
+                    btnBottomLeft.setEnabled(false);
                 }
                 else
                 {
                     btnBottomLeft.setText(O);
                     isX = true;
+                    btnBottomLeft.setEnabled(false);
                 }
                 break;
             case R.id.btnBottomMiddle:
@@ -186,11 +193,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     btnBottomMiddle.setText(X);
                     isX=false;
+                    btnBottomMiddle.setEnabled(false);
                 }
                 else
                 {
                     btnBottomMiddle.setText(O);
                     isX = true;
+                    btnBottomMiddle.setEnabled(false);
                 }
                 break;
             case R.id.btnBottomRight:
@@ -198,33 +207,111 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     btnBottomRight.setText(X);
                     isX=false;
+                    btnBottomRight.setEnabled(false);
                 }
                 else
                 {
                     btnBottomRight.setText(O);
                     isX = true;
+                    btnBottomRight.setEnabled(false);
                 }
                 break;
             case R.id.btnNewGame:
             {
                 ResetBoard();
             }
+            break;
         }
+        CheckWinner();
     }
     public void ResetBoard() {
         //Top Row
-        btnTopLeft.setText(R.string.btnBlank);
-        btnTopMiddle.setText(R.string.btnBlank);
-        btnTopRight.setText(R.string.btnBlank);
+        btnTopLeft.setText(Blank);
+        btnTopMiddle.setText(Blank);
+        btnTopRight.setText(Blank);
+        btnTopLeft.setEnabled(true);
+        btnTopMiddle.setEnabled(true);
+        btnTopRight.setEnabled(true);
         //Middle Row
-        btnMidLeft.setText(R.string.btnBlank);
-        btnMiddle.setText(R.string.btnBlank);
-        btnMidRight.setText(R.string.btnBlank);
+        btnMidLeft.setText(Blank);
+        btnMiddle.setText(Blank);
+        btnMidRight.setText(Blank);
+        btnMidLeft.setEnabled(true);
+        btnMiddle.setEnabled(true);
+        btnMidRight.setEnabled(true);
         //Bottom Row
-        btnBottomLeft.setText(R.string.btnBlank);
-        btnBottomMiddle.setText(R.string.btnBlank);
-        btnBottomRight.setText(R.string.btnBlank);
+        btnBottomLeft.setText(Blank);
+        btnBottomMiddle.setText(Blank);
+        btnBottomRight.setText(Blank);
+        btnBottomLeft.setEnabled(true);
+        btnBottomMiddle.setEnabled(true);
+        btnBottomRight.setEnabled(true);
 
+        msgGameStatus.setText(Blank);
+
+    }
+
+    public void CheckWinner()
+    {   //Top Row
+        if (btnTopRight.getText().toString().equals(btnTopMiddle.getText().toString())
+                && btnTopMiddle.getText().toString().equals(btnTopLeft.getText().toString())
+                && btnTopLeft.getText().toString().equals(btnTopRight.getText().toString()))
+        {
+            msgGameStatus.setText(btnTopRight.getText().toString() + " Wins!");
+        }
+        //Middle Row
+        else if (btnMidRight.getText().toString().equals(btnMiddle.getText().toString())
+                && btnMiddle.getText().toString().equals(btnMidLeft.getText().toString())
+                && btnMidLeft.getText().toString().equals(btnMidRight.getText().toString()))
+        {
+            msgGameStatus.setText(btnMidRight.getText().toString() + " Wins!");
+        }
+        //Bottom Row
+        else if (btnBottomRight.getText().toString().equals(btnBottomMiddle.getText().toString())
+                && btnBottomMiddle.getText().toString().equals(btnBottomLeft.getText().toString())
+                && btnBottomLeft.getText().toString().equals(btnBottomRight.getText().toString()))
+        {
+            msgGameStatus.setText(btnBottomLeft.getText().toString() + " Wins!");
+        }
+        //Left Column
+        else if (btnTopLeft.getText().toString().equals(btnMidLeft.getText().toString())
+                && btnMidLeft.getText().toString().equals(btnBottomLeft.getText().toString())
+                && btnBottomLeft.getText().toString().equals(btnTopLeft.getText().toString()))
+        {
+            msgGameStatus.setText(btnTopLeft.getText().toString() + " Wins!");
+        }
+        //Middle Column
+        else if (btnTopMiddle.getText().toString().equals(btnMiddle.getText().toString())
+                && btnMiddle.getText().toString().equals(btnBottomMiddle.getText().toString())
+                && btnBottomMiddle.getText().toString().equals(btnTopMiddle.getText().toString()))
+        {
+            msgGameStatus.setText(btnTopMiddle.getText().toString() + " Wins!");
+        }
+        //Right Column
+        else if (btnTopRight.getText().toString().equals(btnMidRight.getText().toString())
+                && btnMidRight.getText().toString().equals(btnBottomRight.getText().toString())
+                && btnBottomRight.getText().toString().equals(btnTopRight.getText().toString()))
+        {
+            msgGameStatus.setText(btnTopRight.getText().toString() + " Wins!");
+        }
+        //Left Diagonal (from Top)
+        else if (btnTopLeft.getText().toString().equals(btnMiddle.getText().toString())
+                && btnMiddle.getText().toString().equals(btnBottomRight.getText().toString())
+                && btnBottomRight.getText().toString().equals(btnTopLeft.getText().toString()))
+        {
+            msgGameStatus.setText(btnTopLeft.getText().toString() + " Wins!");
+        }
+        //Right Diagonal (from Top)
+        else if (btnTopRight.getText().toString().equals(btnMiddle.getText().toString())
+                && btnMiddle.getText().toString().equals(btnBottomLeft.getText().toString())
+                && btnBottomLeft.getText().toString().equals(btnBottomRight.getText().toString()))
+        {
+            msgGameStatus.setText(btnTopRight.getText().toString() + " Wins!");
+        }
+        else
+        {
+            msgGameStatus.setText("Tie!");
+        }
     }
 }
 

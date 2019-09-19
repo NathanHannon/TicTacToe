@@ -5,6 +5,6 @@
 
     <string name="X">X</string>
     <string name="O">O</string>
-    <string name="btnBlank"> </string>
+    <string name="Blank"> </string>
     <string name="new_game">New Game</string>
 </resources>
