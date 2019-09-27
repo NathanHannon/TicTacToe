@@ -1,164 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:layout_editor_absoluteY="56dp"
-    tools:showIn="@layout/activity_main">
+    android:paddingTop="56dp"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3" >
 
-    <Button
-        android:id="@+id/btnNewGame"
-        android:layout_width="324dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="148dp"
-        android:text="@string/new_game"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent" />
+        <!-- col 1 -->
 
-    <Button
-        android:id="@+id/btnMiddle"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/Blank"
-        app:layout_constraintBottom_toTopOf="@+id/btnBottomMiddle"
-        app:layout_constraintEnd_toStartOf="@+id/btnMidRight"
-        app:layout_constraintStart_toEndOf="@+id/btnMidLeft"
-        app:layout_constraintTop_toBottomOf="@+id/btnTopMiddle" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/btnTopMiddle"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/Blank"
-        app:layout_constraintBottom_toTopOf="@+id/btnMiddle"
-        app:layout_constraintEnd_toStartOf="@+id/btnTopRight"
-        app:layout_constraintStart_toEndOf="@+id/btnTopLeft"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/btnTopLeft"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/btnMidRight"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/Blank"
-        app:layout_constraintBottom_toTopOf="@+id/btnBottomRight"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnMiddle"
-        app:layout_constraintTop_toBottomOf="@+id/btnTopRight" />
+            <Button
+                android:id="@+id/btnTopMiddle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/btnTopRight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3" >
 
-    <Button
-        android:id="@+id/btnBottomRight"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginBottom="110dp"
-        android:text="@string/Blank"
-        app:layout_constraintBottom_toTopOf="@+id/btnNewGame"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnBottomMiddle"
-        app:layout_constraintTop_toBottomOf="@+id/btnMidRight" />
+        <!-- col 1 -->
 
-    <Button
-        android:id="@+id/btnMidLeft"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/Blank"
-        app:layout_constraintBottom_toTopOf="@+id/btnBottomLeft"
-        app:layout_constraintEnd_toStartOf="@+id/btnMiddle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTopLeft" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/btnMidLeft"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/btnMiddle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/btnMidRight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3" >
 
-    <Button
-        android:id="@+id/btnTopRight"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/Blank"
-        app:layout_constraintBottom_toTopOf="@+id/btnMidRight"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnTopMiddle"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- col 1 -->
 
-    <Button
-        android:id="@+id/btnTopLeft"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/Blank"
-        app:layout_constraintBottom_toTopOf="@+id/btnMidLeft"
-        app:layout_constraintEnd_toStartOf="@+id/btnTopMiddle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnBottomLeft"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="110dp"
-        android:text="@string/Blank"
-        app:layout_constraintBottom_toTopOf="@+id/btnNewGame"
-        app:layout_constraintEnd_toStartOf="@+id/btnBottomMiddle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMidLeft" />
-
-    <Button
-        android:id="@+id/btnBottomMiddle"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="110dp"
-        android:text="@string/Blank"
-        app:layout_constraintBottom_toTopOf="@+id/btnNewGame"
-        app:layout_constraintEnd_toStartOf="@+id/btnBottomRight"
-        app:layout_constraintStart_toEndOf="@+id/btnBottomLeft"
-        app:layout_constraintTop_toBottomOf="@+id/btnMiddle" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/btnBottomLeft"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/btnBottomMiddle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/btnBottomRight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/msgGameStatus"
-        android:layout_width="228dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnNewGame"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBottomRight" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Blank"
+        android:paddingHorizontal="@dimen/default_gap"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btnNewGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_game" />
+</LinearLayout>
