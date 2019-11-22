@@ -17,7 +17,7 @@ import static com.nathan.tictactoe.R.string.X;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private boolean isX = true;
-    Button buttonGrid[][]= new Button[3][3];
+    Button[][] buttonGrid = new Button[3][3];
     private TextView msgGameStatus;
 
     @Override
